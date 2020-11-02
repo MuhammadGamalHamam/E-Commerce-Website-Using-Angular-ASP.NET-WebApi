@@ -1,0 +1,67 @@
+<div class="container-fluid" style="text-align: center;">
+  <div class="row justify-content-center">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++ Items Column +++++++++++++++++++++++++++++++++++++++++++++ -->
+    <div class="col-md-12 col-lg-12 my-2 col-sm-11 col-11" style="display: inline-block;">
+      <div class="row justify-content-center" id="myItems">
+
+        <div style="display: inline-block;" class="col-sm-11 col-lg-2 col-11 col-md-2 px-0 m-3 rounded-lg shadow" *ngFor="let item of productList">
+          <div class="" id="test" style="position: relative;">
+            <img src="./assets/Images/{{item.Img}}" class="mx-auto d-block" style="width: 100%; height: auto;" />
+            <div class="overlay"></div>
+            <div class="button">
+              <button type="button" class="btn rounded mx-2 mb-1" style="text-align: center; z-index: 1;
+                  background-color: #e7ab3c; color: white; font-size: 0.9em;" (click)="addToCart(item.Id)">
+                Add To Cart&nbsp;
+              </button><br />
+              <button type="button" class="btn rounded mx-2 mb-1"  style="text-align: center;
+                  z-index: 1; background-color: #e7ab3c; color: white; font-size: 0.9em;"
+                  data-toggle="modal" data-target="#prdDetailsModal" (click)="showDetails(item.Id)">
+                Show Details
+              </button>
+            </div>
+          </div>
+          <div class="text-center px-3 pb-3 justify-content-center">
+            <div class="text-dark" style="font-family: Overpass; font-size: 20px;">
+              {{item.Name}}
+            </div>
+            <div style="font-family: Overpass;">
+              <span style="color: #e7ab3c;">{{item.Price | currency}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Details -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#prdDetailsModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="prdDetailsModal" tabindex="-1" role="dialog" aria-labelledby="prdDetailsModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="prdDetailsModalTitle">Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="./assets/Images/{{selectedPrd.Img}}" class="mx-auto d-block" style="width: 100%; height: auto;" />
+        <div class="text-dark" style="font-family: Overpass; font-size: 20px;">
+          {{selectedPrd.Name}}
+        </div>
+        <div style="font-family: Overpass;">
+          <span style="color: #e7ab3c;">{{selectedPrd.Price | currency}}</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

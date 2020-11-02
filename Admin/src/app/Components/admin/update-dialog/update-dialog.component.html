@@ -1,0 +1,23 @@
+
+<div style="width: 100%;">
+<h2 mat-dialog-title>Update Product</h2>
+<mat-dialog-content>
+  <form #frm='ngForm'>
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="wantedProduct.Name" type="text" name="name" required />
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <input matInput placeholder="Price" [(ngModel)]="wantedProduct.Price" type="number" min="1" name="price" required />
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <input matInput placeholder="Quantity" [(ngModel)]="wantedProduct.Quantity" type="number" min="1" name="quantity" required />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close mat-dialog-close="true" (click)="updateProduct()" color="primary" [disabled]='frm.invalid'>Update</button>
+  <button mat-raised-button mat-dialog-close mat-dialog-close="false">Close</button>
+</mat-dialog-actions>
+</div>

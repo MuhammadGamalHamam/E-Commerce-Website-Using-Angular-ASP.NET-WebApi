@@ -1,0 +1,21 @@
+
+<div style="width: 100%;">
+  <h2 mat-dialog-title>Product Details</h2>
+<mat-dialog-content>
+  <div>
+    <img src="./assets/Images/{{wantedProduct.Img}}" width="200" height="200" />
+  </div>
+  <div>
+    <strong>Name: </strong>&nbsp;{{wantedProduct.Name}}
+  </div>
+  <div>
+    <strong>Price: </strong>&nbsp;{{wantedProduct.Price}}
+  </div>
+  <div>
+    <strong>Quantity: </strong>&nbsp;{{wantedProduct.Quantity}}
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="primary">Close</button>
+</mat-dialog-actions>
+</div>

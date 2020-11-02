@@ -1,0 +1,35 @@
+
+<!-- <mat-card>
+  <mat-card-header>
+    <mat-card-title>Login Form</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #frm='ngForm'>
+      <mat-form-field>
+        <input matInput placeholder="Your Username" [(ngModel)]="userLogin.username" type="text" name="username" required />
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input matInput placeholder="Your Password" [(ngModel)]="userLogin.password" type="password" name="password" required />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()" color="primary" [disabled]='frm.invalid'>Login</button>
+  </mat-card-actions>
+</mat-card> -->
+
+<div style="padding-left: 20px; padding-top: 15px;">
+  <h1>Login</h1>
+  <form #frm='ngForm'>
+    <mat-form-field>
+      <input matInput placeholder="Your Username" [(ngModel)]="userLogin.username" type="text" name="username" required />
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <input matInput placeholder="Your Password" [(ngModel)]="userLogin.password" type="password" name="password" required />
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="login()" color="primary" [disabled]='frm.invalid'>Login</button>
+</div>
+
